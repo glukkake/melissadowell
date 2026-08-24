@@ -1,0 +1,106 @@
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* No lonely half-width tail: when the count is odd, the last card spans the
+     full row so the grid always reads as intentional. */
+  .grid > .item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+.item {
+  display: flex;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.company {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.years {
+  white-space: nowrap;
+}
+
+.name {
+  font-size: var(--text-xl);
+}
+
+.summary {
+  color: var(--text-muted);
+  font-size: var(--text-base);
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tag {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 2px var(--space-3);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--text-sm);
+}
+
+.role {
+  color: var(--text-muted);
+}
+
+.cta {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

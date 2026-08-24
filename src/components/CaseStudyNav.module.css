@@ -1,0 +1,64 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.top {
+  margin-bottom: var(--space-7);
+}
+
+.bottom {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.prev {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.dir {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.name {
+  max-width: 24ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.link:hover .name {
+  color: var(--accent);
+}
+
+/* Tight screens: keep the ← Prev / Next → labels, drop the long project titles */
+@media (max-width: 560px) {
+  .prev .name,
+  .next .name {
+    display: none;
+  }
+}

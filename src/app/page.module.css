@@ -1,0 +1,25 @@
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.work {
+  padding-top: var(--space-6);
+  scroll-margin-top: calc(var(--header-h) + var(--space-4));
+}
+
+.workHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.workTitle {
+  font-size: var(--text-2xl);
+}
+
+.workSub {
+  color: var(--text-muted);
+}

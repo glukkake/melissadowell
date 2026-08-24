@@ -1,0 +1,72 @@
+.header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  min-height: var(--header-h);
+  padding: var(--space-2) var(--container-pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: var(--accent-strong);
+  color: #0d0d18;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+}
+
+.status {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.statusLabel {
+  color: var(--text);
+}
+
+.statusMain {
+  color: var(--text);
+}
+
+.statusLink {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.statusLink:hover {
+  color: var(--accent-hover);
+}
+
+/* Hide the "currently at" status once the header gets tight */
+@media (max-width: 560px) {
+  .status {
+    display: none;
+  }
+}
