@@ -1,4 +1,12 @@
+---
+links:
+  - label: "Watch the MicroAI demo"
+    url: "https://www.youtube.com/watch?v=Mb70OkJlSVY"
+---
+
 ![A ONE Tech data-visualization dashboard on the C2M platform](/projects/onetech/dashboard.png)
+
+> 📺 A live walkthrough of dashboards I designed appears in [this MicroAI tutorial](https://www.youtube.com/watch?v=Mb70OkJlSVY) around the **9:20** mark — dashboard stills coming soon.
 
 ## Context
 
