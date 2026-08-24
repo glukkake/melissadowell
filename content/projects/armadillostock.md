@@ -3,6 +3,8 @@ live: "https://armadillostock.com"
 status: "Pre-launch marketing site is live; the platform is in active build."
 ---
 
+![The live Armadillo pre-launch marketing site — a "Coming Soon" page with an early-adopter illustration gallery](/projects/armadillostock/marketing-site.jpg)
+
 ## Context
 
 Armadillo is a community-run platform where illustrators showcase licensable work so buyers can find them directly, and the two negotiate terms one-on-one. It's not intended to replace an artist's portfolio, and it's not a selling site like traditional stock illustration sites, and the site takes no commission for any licensing deals made through it. The site also requires that the art must be 100% created by the artist - no AI-generated works are allowed. The site was created as a reaction to AI art flooding traditional avenues for artists to sell their work.
