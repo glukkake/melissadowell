@@ -65,6 +65,17 @@ export const projects: Project[] = [
  */
 export const otherWorks: Project[] = [
   {
+    slug: "spooky-season",
+    name: "Spooky Season Event Aggregator",
+    company: "Personal project · open source",
+    role: "Design & Development",
+    years: "2026",
+    summary:
+      "An open-source Google Sheets app that turns the Halloween event fliers friends post on Instagram into a sorted, filterable public page, using Claude to read each flier.",
+    thumb: "/other-works/spooky-season.png",
+    thumbPos: "top",
+  },
+  {
     slug: "melissadowell-redesign",
     name: "Redesigning melissadowell.com",
     company: "Personal project",

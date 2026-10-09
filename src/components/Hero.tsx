@@ -22,8 +22,11 @@ export function Hero() {
     el.style.animation = "";
   }, [pathname, reduce]);
 
+  // Same starting state on server and client (useReducedMotion is only known in the
+  // browser, so branching here causes a hydration mismatch). Reduced motion gets an
+  // instant transition instead of a different starting point.
   const rise = (delay: number) => ({
-    initial: reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 },
+    initial: { opacity: 0, y: 18 },
     animate: { opacity: 1, y: 0 },
     transition: {
       duration: reduce ? 0 : 0.6,
