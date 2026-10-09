@@ -4,8 +4,8 @@ import { ThemeToggle } from "./ThemeToggle";
 
 // Update this as you change roles — it's the "currently at" status in the header.
 const CURRENT = {
-  company: "Turngate",
-  companyUrl: "https://turngate.io",
+  company: "Trinity Cyber",
+  companyUrl: "https://www.trinitycyber.com",
   location: "Remote, USA",
 };
 
