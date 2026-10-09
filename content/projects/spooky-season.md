@@ -9,39 +9,35 @@ links:
 
 ## Context
 
-Every October I keep a spreadsheet of Halloween-season events (dance parties, burlesque, workshops, horror movie nights) and share it with friends. It always picks up traction. But building it meant saving dozens of Instagram posts, then retyping every flier into a sheet by hand.
+Last October I made a Google spreadsheet of Halloween-season happenings in my city and shared it with friends for better party planning together. Also, Halloween is just my favourite season and the one where I really push myself to leave the house and attend any spooky happenings.
 
-## The problem
+This year I've been learning to utilize Claude Code better in making silly little applications for my personal use, and figured I'd give the Halloween Spreadsheet a makeover. Spreadsheets are a little tedious to read, difficult to filter for casual users and a menace to parse through on mobile devices.
 
-Almost all of these events are announced on Instagram, as a flier image with the details baked into the picture. Instagram has no way to export a saved folder. My account is private, so nothing can read it from outside. And once the list is shared, people want to add their own finds, which usually means someone accidentally deleting rows in an open spreadsheet.
+## How it works
 
-## What I built
+I share an Instagram post, Facebook event or flier screenshot from my phone or computer, and Claude reads the flier: name, date, time, venue, price and what kind of event it is. It all lands in a private Google Sheet, and a page shows the list to everyone else:
 
-A small app that runs entirely inside Google Sheets and Apps Script, with no server and no hosting bill:
-
-- **Share a post, get a listing.** From my phone, I share any Instagram or Facebook post, web page or flier screenshot to an iPhone Shortcut. Claude reads the flier and fills in the name, date, time, venue, price, a one-line description and the type of event.
-- **A page people actually use.** The sheet feeds a public page: fliers grouped by day, color-coded type tags you can click to filter, search, a date picker, and a 🎃 Spooky only / This Season / All events toggle.
-- **Anyone can add events** through a form on the page, without a Google account and without being able to edit or delete anything. Duplicates are caught automatically.
-- **Invite-only mode** for when a list spreads further than intended. One menu click locks the page behind a private invite link, which can be replaced any time.
+- Flier images and event info load in a card view with color-coded tags you can click to filter (dance party, workshop, burlesque, film…) and listed as a Spooky event (specifically Halloween-themed) vs Seasonal as just an event that's occurring in October.
+- Sorted by day, ordered so whatever event ends soonest will come first, so you can plan a night of event-hopping.
+- Late-night parties stay listed until they actually end, for anyone searching for an address at 1am.
+- Every card shows the price, notes NTAFLOF events, and links back to the venue or promoter who posted it.
+- Friends can add events from the page, and if the list gets out of hand I can lock it to an invite link within the friend group only.
 
 <figure>
-  <img src="/projects/spooky-season/page-phone.png" alt="The page on a phone, with full-width flier cards showing time, venue, price and the account that posted it" style="max-width: 320px">
-  <figcaption>Designed phone-first, since that's where people check what's on tonight.</figcaption>
+  <img src="/projects/spooky-season/page-phone.png" alt="The page on a phone, with full-width flier cards, filters, a refresh line and a round add button" style="max-width: 320px">
+  <figcaption>Built phone-first, since that is where everyone checks what is on tonight.</figcaption>
 </figure>
 
-## Design decisions
+## Under the hood
 
-- **Ordered by "get there by."** Within a day, events that end soonest come first, so people can see what to hit first and what they can still catch later.
-- **Late nights count.** A 10pm–2am party stays listed until 2am, in case someone's checking the address at 1am.
-- **Price up front.** Every card shows the ticket price or Free, and calls out when no one is turned away for lack of funds.
-- **Credit where it's due.** Each card links back to the venue or promoter who posted it, with a small Instagram, Facebook or web icon. People adding events can opt out of credit.
 - **Accessible by default.** Real buttons and labels, keyboard and screen reader support, readable contrast on a dark theme, and respect for reduced motion.
-- **Built for strangers on the internet.** Uploads must be real images, text can't become spreadsheet formulas, owner-only actions are locked down, and the public form is rate limited so spam can't run up the AI bill.
-
-## How I built it
-
-I paired with Claude Code over a day: pulling my saved Instagram folder into the sheet, designing the page in the browser, and iterating on the details as friends' needs came up. Claude also does the flier reading in production, returning structured event data for each post.
+- **Built for strangers on the internet.** Uploads must be real images, text can't become spreadsheet formulas, owner-only actions are locked down, and the public form is rate limited so spam can't run up the AI bill. No tracking, and no third-party scripts or fonts.
+- **Honest about the AI.** The page footer notes that event details are read from fliers by AI, so people double-check the original post.
 
 ## Make your own
 
-It's open source and works for any city and season. [Make a copy of the template](https://docs.google.com/spreadsheets/d/12RIoAboIik_IPqx2G_PwnpzshwXVzqeGuJcN_Z97ZuA/copy), follow the Start here tab, and you'll have your own list in about ten minutes. Ideas and improvements are welcome on [GitHub](https://github.com/glukkake/spooky-season-event-aggregator).
+It runs entirely in your own Google account (no server, no hosting), and works for any city or season. It's currently built to run with your own AI agent, so it may incur costs with that.
+
+If you want to [make a copy of the template](https://docs.google.com/spreadsheets/d/12RIoAboIik_IPqx2G_PwnpzshwXVzqeGuJcN_Z97ZuA/copy), follow the Start here tab, and you will have your own list in about ten minutes.
+
+I love collaboration, so I made it open source and you can add ideas and improvements on [GitHub](https://github.com/glukkake/spooky-season-event-aggregator).
